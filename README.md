@@ -61,7 +61,7 @@ Pending → Approved → In Progress → Completed / Rejected
 
 ### Backend
 - PHP 8.2
-- Laravel 10
+- Laravel 12
 - MySQL
 
 ### Frontend
