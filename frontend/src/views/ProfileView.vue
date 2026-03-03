@@ -216,7 +216,6 @@ const successMessage = ref('');
 const passwordMessage = ref('');
 const showDeleteModal = ref(false);
 const deletePassword = ref('');
-
 const profileForm = ref({ name: '', email: '' });
 const passwordForm = ref({ current_password: '', password: '', password_confirmation: '' });
 

@@ -3,7 +3,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
       
       <div class="text-xs font-medium text-slate-400">
-        &copy; {{ currentYear }} <span class="text-slate-500 font-bold">Shabakat WOMS System</span>.
+        &copy; {{ currentYear }} <span class="text-slate-500 font-bold">WOMS System</span>.
         <span class="hidden sm:inline text-slate-300 mx-1">|</span>
         <span class="hidden sm:inline text-orange-400">Abdalrhman Hamed</span>
       </div>

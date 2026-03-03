@@ -12,9 +12,9 @@
       
       <div class="flex flex-col items-center mb-8 transform transition-all hover:scale-105 duration-500">
         <div class="bg-white p-4 rounded-2xl shadow-lg shadow-blue-100 border border-blue-50 mb-4">
-           <img src="../assets/shabakat.png" alt="Shabakat Logo" class="h-10 w-auto">
+           <img src="../assets/woms.png" alt="WOMS Logo" class="h-10 w-auto">
         </div>
-        <h2 class="text-3xl font-extrabold text-slate-800 tracking-tight">Shabakat <span class="text-orange-500">WOMS</span></h2>
+        <h2 class="text-3xl font-extrabold text-slate-800 tracking-tight">WOMS</h2>
         <p class="mt-2 text-sm text-slate-500 font-medium">Internal Work Order Management System</p>
       </div>
 
@@ -39,7 +39,7 @@
                 autocomplete="email" 
                 required 
                 class="block w-full pl-10 pr-3 py-3 border border-slate-200 rounded-xl leading-5 bg-slate-50 placeholder-slate-400 focus:outline-none focus:bg-white focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all duration-300 sm:text-sm shadow-sm hover:border-blue-300" 
-                placeholder="name@shabakat.com"
+                placeholder="name@woms.com"
               >
             </div>
           </div>
@@ -92,7 +92,7 @@
 
       <div class="mt-8 text-center animate-fade-in-up animation-delay-500">
         <p class="text-xs text-slate-400">
-          &copy; 2026 Shabakat Tech Solutions Inc. All rights reserved. <br/>
+          &copy; 2026 WOMS Inc. All rights reserved. <br/>
           <a href="#" class="hover:text-blue-600 transition-colors">Privacy Policy</a> | <a href="#" class="hover:text-blue-600 transition-colors">Contact Support</a>
         </p>
         <p class="mt-4 text-xs font-mono text-slate-300">

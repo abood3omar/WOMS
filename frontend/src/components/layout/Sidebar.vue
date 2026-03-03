@@ -8,10 +8,10 @@
     <div class="h-20 flex items-center px-8 border-b border-gray-50">
       <div class="flex items-center gap-3 group cursor-pointer">
         <div class="p-2 bg-blue-50 rounded-xl group-hover:bg-blue-100 transition-colors">
-            <img src="@/assets/shabakat.png" alt="Logo" class="h-6 w-auto">
+            <!-- <img src="@/assets/woms.png" alt="Logo" class="h-6 w-auto"> -->
         </div>
         <div>
-          <h1 class="text-lg font-bold text-slate-800 tracking-tight group-hover:text-blue-600 transition-colors">Shabakat</h1>
+          <h1 class="text-lg font-bold text-slate-800 tracking-tight group-hover:text-blue-600 transition-colors">WOMS</h1>
           <p class="text-[10px] text-orange-500 font-bold tracking-widest uppercase">WOMS System</p>
         </div>
       </div>
