@@ -109,21 +109,21 @@ class RBACSeeder extends Seeder
         
         User::create([
             'name' => 'Admin User',
-            'email' => 'admin@shabakat.com',
+            'email' => 'admin@woms.com',
             'password' => Hash::make('password'),
             'RoleID' => $adminRoleId,
         ]);
 
         User::create([
             'name' => 'Manager User',
-            'email' => 'manager@shabakat.com',
+            'email' => 'manager@woms.com',
             'password' => Hash::make('password'),
             'RoleID' => $managerRoleId,
         ]);
 
         User::create([
             'name' => 'Operator User',
-            'email' => 'operator@shabakat.com',
+            'email' => 'operator@woms.com',
             'password' => Hash::make('password'),
             'RoleID' => $operatorRoleId,
         ]);

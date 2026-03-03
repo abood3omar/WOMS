@@ -1,4 +1,4 @@
-# 🛠️ Shabakat WOMS (Work Order Management System)
+﻿# ðŸ› ï¸ WOMS (Work Order Management System)
 
 A full-stack internal system for managing enterprise maintenance work orders.  
 This project simulates a **real-world enterprise environment**, focusing on:
@@ -10,18 +10,18 @@ This project simulates a **real-world enterprise environment**, focusing on:
 
 ---
 
-## 🚀 Overview
+## ðŸš€ Overview
 
-Shabakat WOMS is an internal maintenance management platform that allows organizations to create, manage, assign, and monitor work orders through a structured approval workflow.
+WOMS is an internal maintenance management platform that allows organizations to create, manage, assign, and monitor work orders through a structured approval workflow.
 
 The system demonstrates backend architecture best practices using Laravel and a modern reactive frontend built with Vue.js.
 
 ---
 
-## ✨ Key Features
+## âœ¨ Key Features
 
-### 🔐 Advanced Security (RBAC)
-- Dynamic permission system (**Modules → Entities → Actions**)
+### ðŸ” Advanced Security (RBAC)
+- Dynamic permission system (**Modules â†’ Entities â†’ Actions**)
 - Three predefined roles:
   - **Admin**
   - **Manager**
@@ -29,35 +29,35 @@ The system demonstrates backend architecture best practices using Laravel and a 
 - Middleware-based authorization for all API routes
 - Token-based authentication using Laravel Sanctum
 
-### 🔧 Work Order Management
+### ðŸ”§ Work Order Management
 - Create, assign, edit, and track maintenance tickets
 - Enforced workflow lifecycle:
 
 ```
-Pending → Approved → In Progress → Completed / Rejected
+Pending â†’ Approved â†’ In Progress â†’ Completed / Rejected
 ```
 
 - Role-specific actions and permissions
 
-### 📊 Interactive Dashboard
+### ðŸ“Š Interactive Dashboard
 - Real-time statistics
 - Visual charts and summaries
 - Recent activity monitoring
 
-### 📜 Activity Logging
+### ðŸ“œ Activity Logging
 - Full audit trail for system actions:
   - Create
   - Update
   - Delete
   - Login events
 
-### 📱 Responsive UI
+### ðŸ“± Responsive UI
 - Modern responsive interface
 - Built with Tailwind CSS
 
 ---
 
-## 🛠 Tech Stack
+## ðŸ›  Tech Stack
 
 ### Backend
 - PHP 8.2
@@ -75,18 +75,18 @@ Pending → Approved → In Progress → Completed / Rejected
 
 ---
 
-## ⚙️ Installation Guide (Local Setup)
+## âš™ï¸ Installation Guide (Local Setup)
 
-### 1️⃣ Clone Repository
+### 1ï¸âƒ£ Clone Repository
 
 ```bash
-git clone https://github.com/abood3omar/shabakat-assessment.git
-cd shabakat-assessment
+git clone https://github.com/abood3omar/woms-assessment.git
+cd woms-assessment
 ```
 
 ---
 
-## 🔙 Backend Setup
+## ðŸ”™ Backend Setup
 
 Navigate to backend folder:
 
@@ -109,7 +109,7 @@ cp .env.example .env
 Configure database inside `.env`:
 
 ```
-DB_DATABASE=shabakat_db
+DB_DATABASE=woms_db
 DB_USERNAME=root
 DB_PASSWORD=
 ```
@@ -140,7 +140,7 @@ http://127.0.0.1:8000
 
 ---
 
-## 🎨 Frontend Setup
+## ðŸŽ¨ Frontend Setup
 
 Open a new terminal:
 
@@ -168,25 +168,25 @@ http://localhost:5173
 
 ---
 
-## 🔑 Demo Login Credentials (Seeded Data)
+## ðŸ”‘ Demo Login Credentials (Seeded Data)
 
 | Role     | Email                    | Password | Permissions |
 |----------|--------------------------|----------|-------------|
-| Admin    | admin@shabakat.com       | password | Full system access |
-| Manager  | manager@shabakat.com     | password | Approve/Reject & manage operations |
-| Operator | operator@shabakat.com    | password | View and manage assigned orders |
+| Admin    | admin@woms.com       | password | Full system access |
+| Manager  | manager@woms.com     | password | Approve/Reject & manage operations |
+| Operator | operator@woms.com    | password | View and manage assigned orders |
 
 ---
 
-## 🏗 Architecture Overview
+## ðŸ— Architecture Overview
 
 ### Backend Structure
 
-- **Controllers** → Handle request & response logic
-- **Middleware** → `CheckPermission.php` manages dynamic RBAC authorization
-- **Models** → Define relationships and query scopes
-- **Form Requests** → Dedicated validation layer
-- **API Resources** → Structured JSON responses
+- **Controllers** â†’ Handle request & response logic
+- **Middleware** â†’ `CheckPermission.php` manages dynamic RBAC authorization
+- **Models** â†’ Define relationships and query scopes
+- **Form Requests** â†’ Dedicated validation layer
+- **API Resources** â†’ Structured JSON responses
 
 ### Database Design
 
@@ -194,14 +194,14 @@ The database follows **Third Normal Form (3NF)** principles.
 
 Core tables:
 
-- `users` — Authentication & role assignment
-- `roles` / `permissions` — Dynamic access control system
-- `work_orders` — Main business entity
-- `activity_logs` — System audit trail
+- `users` â€” Authentication & role assignment
+- `roles` / `permissions` â€” Dynamic access control system
+- `work_orders` â€” Main business entity
+- `activity_logs` â€” System audit trail
 
 ---
 
-## 🧠 System Design Concepts Demonstrated
+## ðŸ§  System Design Concepts Demonstrated
 
 - Clean layered architecture
 - RESTful API design
@@ -214,18 +214,18 @@ Core tables:
 
 ---
 
-## 🚧 Upcoming Features (Planned Enhancements)
+## ðŸš§ Upcoming Features (Planned Enhancements)
 
 The system is actively evolving, and the following features are planned for future releases:
 
-### 🔔 Real-Time Notifications
+### ðŸ”” Real-Time Notifications
 - In-app notification system for important events:
   - Work order assignment
   - Status updates
   - Approval or rejection actions
 - Instant alerts to improve response time and operational awareness.
 
-### 📋 My Orders (Technician Workspace)
+### ðŸ“‹ My Orders (Technician Workspace)
 A dedicated workspace for technicians to manage their assigned tasks.
 
 **This page is dedicated for technicians to view, accept, or reject their assigned tasks.**
@@ -237,12 +237,12 @@ Features include:
 - Update work order status directly
 - Improved accountability and task ownership
 
-### ⚡ Workflow Improvements
+### âš¡ Workflow Improvements
 - Automatic assignment notifications
 - Status transition validation enhancements
 - Role-based action visibility improvements
 
-### 📈 Future Enhancements
+### ðŸ“ˆ Future Enhancements
 - Email notifications integration
 - Real-time updates using WebSockets
 - Advanced reporting & analytics
@@ -251,7 +251,7 @@ Features include:
 
 ---
 
-## 👨‍💻 Developer
+## ðŸ‘¨â€ðŸ’» Developer
 
 **Abdalrhman Hamed**
 
@@ -259,6 +259,8 @@ Full Stack Developer (Laravel & Vue.js)
 
 ---
 
-## 📄 License
+## ðŸ“„ License
 
 This project is created for technical assessment and educational purposes.
+
+
