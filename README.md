@@ -1,119 +1,227 @@
 # 🛠️ WOMS — Work Order Management System
 
-A full-stack internal system for managing enterprise maintenance work orders.
+### Full-Stack Maintenance Management Application
 
-This project simulates a **real-world enterprise environment**, focusing on:
+![Laravel](https://img.shields.io/badge/Laravel-12-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
+![Vue.js](https://img.shields.io/badge/Vue.js-3-4FC08D?style=for-the-badge&logo=vue.js&logoColor=white)
+![PHP](https://img.shields.io/badge/PHP-8.2-777BB4?style=for-the-badge&logo=php&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
+![Sanctum](https://img.shields.io/badge/Auth-Laravel_Sanctum-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
 
-- Role-Based Access Control (RBAC)
-- Workflow Management
-- Clean System Architecture
-- Secure API Design
-
-![Laravel](https://img.shields.io/badge/Laravel-12-FF2D20?logo=laravel&logoColor=white)
-![Vue.js](https://img.shields.io/badge/Vue.js-3-4FC08D?logo=vue.js&logoColor=white)
-![PHP](https://img.shields.io/badge/PHP-8.2-777BB4?logo=php&logoColor=white)
-![License](https://img.shields.io/badge/License-Educational-blue)
+**Laravel · Vue.js · RESTful APIs · RBAC · Workflow Management**
 
 ---
 
-## 📑 Table of Contents
+## 📖 Overview
 
-- [Overview](#-overview)
-- [Key Features](#-key-features)
-- [Tech Stack](#-tech-stack)
-- [Installation Guide](#️-installation-guide-local-setup)
-- [Demo Login Credentials](#-demo-login-credentials-seeded-data)
-- [Architecture Overview](#-architecture-overview)
-- [System Design Concepts Demonstrated](#-system-design-concepts-demonstrated)
-- [Upcoming Features](#-upcoming-features-planned-enhancements)
-- [Developer](#-developer)
-- [License](#-license)
+**WOMS (Work Order Management System)** is a full-stack web application designed to manage internal maintenance requests and work orders.
+
+The project simulates a business environment where different users are responsible for creating, reviewing, assigning, and completing maintenance tasks.
+
+It demonstrates how Laravel and Vue.js can be combined to build an API-driven application with role-based access control, structured workflows, and activity tracking.
+
+The project focuses on backend engineering concepts such as authorization, workflow state management, database relationships, and maintaining a clear separation between frontend and backend responsibilities.
 
 ---
 
-## 🚀 Overview
+## 🚀 Key Features
 
-WOMS is an internal maintenance management platform that allows organizations to create, manage, assign, and monitor work orders through a structured approval workflow.
+### 🔐 Authentication & Role-Based Access Control
 
-The system demonstrates backend architecture best practices using Laravel, paired with a modern, reactive frontend built with Vue.js.
+WOMS uses Laravel Sanctum for token-based authentication and implements role-based access control to manage user permissions.
 
----
+The system includes three main roles:
 
-## ✨ Key Features
+| Role | Responsibilities |
+|---|---|
+| Admin | System administration and user management |
+| Manager | Reviewing, approving, rejecting, and managing work orders |
+| Operator | Viewing and managing assigned maintenance tasks |
 
-### 🔐 Advanced Security (RBAC)
-- Dynamic permission system (**Modules → Entities → Actions**)
-- Three predefined roles:
-  - **Admin**
-  - **Manager**
-  - **Operator**
-- Middleware-based authorization for all API routes
-- Token-based authentication using Laravel Sanctum
+Authorization is enforced through backend middleware and permission checks.
+
+The application also demonstrates a database-driven approach to managing access rights across system modules and actions.
 
 ### 🔧 Work Order Management
-- Create, assign, edit, and track maintenance tickets
-- Enforced workflow lifecycle:
 
-  ```
-  Pending → Approved → In Progress → Completed / Rejected
-  ```
+The system supports:
 
-- Role-specific actions and permissions
+- Creating maintenance work orders.
+- Editing and managing work order information.
+- Assigning work orders to users.
+- Tracking work order status.
+- Reviewing and approving maintenance requests.
+- Managing work orders based on user roles.
 
-### 📊 Interactive Dashboard
-- Real-time statistics
-- Visual charts and summaries
-- Recent activity monitoring
+### 🔄 Workflow Management
 
-### 📜 Activity Logging
-- Full audit trail for system actions:
-  - Create
-  - Update
-  - Delete
-  - Login events
+Work orders follow a defined lifecycle:
 
-### 📱 Responsive UI
-- Modern, responsive interface
-- Built with Tailwind CSS
+```text
+Pending → Approved → In Progress → Completed
+              ↘ Rejected
+```
+
+The workflow provides a structured approach to tracking maintenance requests from submission to completion or rejection.
+
+Status changes are handled through backend operations and authorization rules.
+
+### 📊 Dashboard & Statistics
+
+The application provides dashboard information to help users monitor maintenance operations.
+
+Features include:
+
+- Work order statistics.
+- Status-based summaries.
+- Dashboard charts.
+- Recent activity information.
+
+### 📜 Activity & Audit Logging
+
+WOMS includes activity logging to track important operations and changes within the system.
+
+The logging functionality helps provide visibility into work order activities and administrative actions.
+
+### 💻 Responsive Frontend
+
+The frontend is developed using Vue.js 3 and Tailwind CSS.
+
+It provides interactive pages for managing work orders, reviewing dashboard information, and performing role-specific operations.
 
 ---
 
-## 🛠 Tech Stack
+## 🏗️ System Architecture
 
-### Backend
-- PHP 8.2
-- Laravel 12
-- MySQL
+WOMS separates its frontend and backend into two application components.
 
-### Frontend
-- Vue.js 3 (Composition API)
-- Vite
-- Pinia (State Management)
+**Backend — Laravel 12**
 
-### Styling & Auth
-- Tailwind CSS
-- Laravel Sanctum (Token Authentication)
+Responsible for authentication, authorization, business logic, database operations, and RESTful API endpoints.
+
+**Frontend — Vue.js 3**
+
+Responsible for rendering the user interface, managing client-side interactions, and communicating with the backend API.
+
+**Database — MySQL**
+
+Stores application data, including users, work orders, and activity records.
+
+### High-Level Architecture
+
+```mermaid
+flowchart TD
+    A[Users] --> B[Vue.js Frontend]
+    B --> C[Laravel REST API]
+    C --> D[Authentication & Authorization]
+    D --> E[Work Order Business Logic]
+    E --> F[(MySQL Database)]
+    E --> G[Activity Logging]
+```
 
 ---
 
-## ⚙️ Installation Guide (Local Setup)
+## ⚙️ Backend Engineering
 
-### 1️⃣ Clone the Repository
+The Laravel backend handles the application's core functionality.
+
+### RESTful API Development
+
+The backend exposes API endpoints for:
+
+- Authentication.
+- Dashboard statistics.
+- Work order management.
+- Work order assignment.
+- Status updates.
+- Activity logs.
+
+### Authentication & Authorization
+
+Laravel Sanctum provides token-based authentication.
+
+Custom permission checks and middleware control access to protected operations based on user roles and permissions.
+
+### Business Logic & Workflow
+
+The backend manages work order operations and status changes while applying the application's business rules.
+
+### Database & Eloquent ORM
+
+Eloquent models and relationships are used to manage the application's relational data.
+
+### Validation & API Responses
+
+Laravel validation and structured API responses support communication between the backend and Vue.js frontend.
+
+---
+
+## 🛠️ Technology Stack
+
+| Category | Technologies |
+|---|---|
+| Backend | PHP 8.2, Laravel 12 |
+| Frontend | Vue.js 3, Composition API |
+| Database | MySQL |
+| Authentication | Laravel Sanctum |
+| Authorization | RBAC, Middleware |
+| State Management | Pinia |
+| Styling | Tailwind CSS |
+| Build Tool | Vite |
+| API | RESTful APIs |
+
+---
+
+## 📂 Project Structure
+
+The project separates backend and frontend development into dedicated directories.
+
+```text
+woms-assessment/
+├── backend/
+│   ├── app/
+│   ├── database/
+│   ├── routes/
+│   └── ...
+│
+├── frontend/
+│   ├── src/
+│   ├── public/
+│   └── ...
+│
+└── README.md
+```
+
+---
+
+## ⚙️ Installation Guide
+
+### Prerequisites
+
+Make sure the following tools are installed:
+
+- PHP 8.2 or compatible version.
+- Composer.
+- Node.js and npm.
+- MySQL.
+- Git.
+
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/abood3omar/woms-assessment.git
 cd woms-assessment
 ```
 
-### 2️⃣ Backend Setup
+### 2. Backend Setup
 
-Navigate to the backend folder:
+Navigate to the backend directory:
 
 ```bash
 cd backend
 ```
 
-Install dependencies:
+Install PHP dependencies:
 
 ```bash
 composer install
@@ -125,13 +233,18 @@ Create the environment file:
 cp .env.example .env
 ```
 
-Configure the database inside `.env`:
+Create a MySQL database named `woms_db` and configure the database connection in `.env`:
 
 ```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
 DB_DATABASE=woms_db
 DB_USERNAME=root
 DB_PASSWORD=
 ```
+
+Update the credentials according to your local MySQL configuration.
 
 Generate the application key:
 
@@ -139,27 +252,25 @@ Generate the application key:
 php artisan key:generate
 ```
 
-Run migrations and seeders:
+Run database migrations and seeders:
 
 ```bash
-php artisan migrate:fresh --seed
+php artisan migrate --seed
 ```
 
-Start the backend server:
+Start the Laravel development server:
 
 ```bash
 php artisan serve
 ```
 
-The backend will run at:
+The backend should be accessible at:
 
-```
-http://127.0.0.1:8000
-```
+`http://127.0.0.1:8000`
 
-### 3️⃣ Frontend Setup
+### 3. Frontend Setup
 
-Open a new terminal:
+Open another terminal from the repository root and navigate to the frontend directory:
 
 ```bash
 cd frontend
@@ -171,104 +282,73 @@ Install dependencies:
 npm install
 ```
 
-Run the development server:
+Start the development server:
 
 ```bash
 npm run dev
 ```
 
-The frontend will run at:
+The frontend should be accessible at:
 
-```
-http://localhost:5173
-```
+`http://localhost:5173`
 
----
-
-## 🔑 Demo Login Credentials (Seeded Data)
-
-| Role     | Email                 | Password | Permissions                          |
-|----------|------------------------|----------|---------------------------------------|
-| Admin    | admin@woms.com         | password | Full system access                    |
-| Manager  | manager@woms.com       | password | Approve/reject and manage operations  |
-| Operator | operator@woms.com      | password | View and manage assigned orders       |
-
-> ⚠️ These credentials are for local development and demo purposes only. Do not use them in production.
+Make sure the frontend API configuration points to the correct Laravel backend URL.
 
 ---
 
-## 🏗 Architecture Overview
+## 🔑 Demo Accounts
 
-### Backend Structure
+The project includes seeded accounts for local testing.
 
-- **Controllers** — Handle request and response logic
-- **Middleware** — `CheckPermission.php` manages dynamic RBAC authorization
-- **Models** — Define relationships and query scopes
-- **Form Requests** — Dedicated validation layer
-- **API Resources** — Structured JSON responses
+| Role | Email | Password |
+|---|---|---|
+| Admin | admin@woms.com | password |
+| Manager | manager@woms.com | password |
+| Operator | operator@woms.com | password |
 
-### Database Design
-
-The database follows **Third Normal Form (3NF)** principles.
-
-Core tables:
-
-- `users` — Authentication and role assignment
-- `roles` / `permissions` — Dynamic access control system
-- `work_orders` — Main business entity
-- `activity_logs` — System audit trail
+> **Important:** These credentials are intended for local development and demonstration only. They must not be used in a production environment.
 
 ---
 
-## 🧠 System Design Concepts Demonstrated
+## 🧠 Engineering Concepts Demonstrated
 
-- Clean layered architecture
-- RESTful API design
-- Role-based authorization
-- Workflow state management
-- Audit logging
-- Separation of concerns
+WOMS demonstrates several practical software engineering concepts:
+
+- RESTful API development with Laravel.
+- Frontend/backend separation.
+- Token-based authentication.
+- Role-based authorization.
+- Workflow and status management.
+- Relational database design.
+- Activity logging.
+- Reusable application components.
+- Client-side state management using Vue.js and Pinia.
 
 ---
 
-## 🚧 Upcoming Features (Planned Enhancements)
+## 🔮 Future Improvements
 
-The system is actively evolving. The following features are planned for future releases:
+Potential improvements include:
 
-### 🔔 Real-Time Notifications
-- In-app notification system for important events:
-  - Work order assignment
-  - Status updates
-  - Approval or rejection actions
-- Instant alerts to improve response time and operational awareness
-
-### 📋 My Orders (Technician Workspace)
-A dedicated workspace for technicians to manage their assigned tasks.
-
-Features include:
-- View personally assigned work orders
-- Accept or reject incoming assignments
-- Track task progress
-- Update work order status directly
-- Improved accountability and task ownership
-
-### ⚡ Workflow Improvements
-- Automatic assignment notifications
-- Status transition validation enhancements
-- Role-based action visibility improvements
-
-### 📈 Future Enhancements
-- Email notifications integration
-- Real-time updates using WebSockets
-- Advanced reporting and analytics
-- Mobile-friendly optimizations
-- Performance and caching improvements
+- Real-time notifications for assignments and status changes.
+- A dedicated technician workspace.
+- Email notifications.
+- Advanced reporting and analytics.
+- Improved workflow transition validation.
+- Additional automated testing.
+- Performance and caching improvements.
 
 ---
 
 ## 👨‍💻 Developer
 
-**Abdalrhman Hamed**
-Full Stack Developer (Laravel & Vue.js)
+**Abdalrhman Hamed**  
+Software Engineer | Backend & Full-Stack Development
+
+**GitHub:** [github.com/abood3omar](https://github.com/abood3omar)
+
+**LinkedIn:** [Abdalrhman Hamed](https://www.linkedin.com/in/abdalrhman-hamed-5b929725b/)
 
 ---
+
+*WOMS — A practical full-stack project focused on backend architecture, authorization, and structured business workflows.*
