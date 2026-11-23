@@ -1,6 +1,6 @@
 # 🛠️ WOMS — Work Order Management System
 
-### Full-Stack Maintenance Management Application
+### Full-Stack Maintenance Management Application 
 
 ![Laravel](https://img.shields.io/badge/Laravel-12-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
 ![Vue.js](https://img.shields.io/badge/Vue.js-3-4FC08D?style=for-the-badge&logo=vue.js&logoColor=white)
